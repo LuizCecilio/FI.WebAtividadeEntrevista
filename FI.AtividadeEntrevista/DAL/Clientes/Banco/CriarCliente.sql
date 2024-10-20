@@ -1,7 +1,7 @@
 USE [Teste]
 GO
 
-/****** Object:  Table [dbo].[Fornecedores]    Script Date: 18/10/2024 11:35:06 ******/
+/****** Object:  Table [dbo].[Clientes]    Script Date: 18/10/2024 20:44:16 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,17 +9,17 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Clientes](
-	[Id] [bigint] NOT NULL,
-	NOME          VARCHAR (50) NOT NULL,
-    SOBRENOME     VARCHAR (255) NOT NULL,
-    NACIONALIDADE VARCHAR (50) NOT NULL,
-    CEP           VARCHAR (9) NOT NULL,
-    ESTADO        VARCHAR (2)  NOT NULL,
-    CIDADE        VARCHAR (50) NOT NULL,
-    LOGRADOURO    VARCHAR (500) NOT NULL,
-    EMAIL         VARCHAR (2079),
-    TELEFONE      VARCHAR (15),
-    CPF           VARCHAR (14) NOT NULL	
+	[Id] [bigint] IDENTITY(1, 1),
+	[NOME] [varchar](50) NOT NULL,
+	[SOBRENOME] [varchar](255) NOT NULL,
+	[NACIONALIDADE] [varchar](50) NOT NULL,
+	[CEP] [varchar](9) NOT NULL,
+	[ESTADO] [varchar](2) NOT NULL,
+	[CIDADE] [varchar](50) NOT NULL,
+	[LOGRADOURO] [varchar](500) NOT NULL,
+	[EMAIL] [varchar](2079) NULL,
+	[TELEFONE] [varchar](15) NULL,
+	[CPF] [varchar](14) NOT NULL,
  CONSTRAINT [PK_Clientes] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
